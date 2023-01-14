@@ -1,0 +1,16 @@
+Creating code with JS
+Functions
+Bugs
+Improving your first JS program
+    variables
+    comments
+    pseudocode
+further improving your first program 
+strings and parameters
+    small problem with quotation marks
+formating strings
+numbers 
+readability
+defining your own Functions
+returning values
+summing up

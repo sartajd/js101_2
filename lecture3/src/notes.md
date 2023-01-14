@@ -1,0 +1,4 @@
+- Computer only understands binary--Zeros and ones. in order to talk with computer we need a special software called **Interpreter**. JavaScript Interpreter is also called *JavaScript Engine*
+- In terminal, we can command computer to perform certain actions. 
+- functions are verbs or actions that computer or interpreter will already know how to perform. 
+- 
