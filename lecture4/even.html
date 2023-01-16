@@ -1,0 +1,18 @@
+<script>
+    const isEven = function(n){
+        return n % 2 == 0 
+    }
+
+    let x = Number(prompt("what's x?"))
+    // NaN is not equal to NaN
+    if(isNaN(x)){   
+        alert("Invalid Input")
+    }
+    else if(isEven(x)){
+        alert(`${x} is even`)
+    }
+    else {
+        alert(`${x} is odd`)
+    }
+
+</script>
