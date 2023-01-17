@@ -1,0 +1,6 @@
+1. write a program that prompts user : "Do you agree?"
+if users enters lowercase "y" or uppercase "Y", it should alert "You agreed", else 
+it should alert "You didn't agreed". 
+for example: 
+
+2. write a program that ask user for three numbers: x, y and z. and returns thee greatest.
