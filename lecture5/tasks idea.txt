@@ -1,0 +1,9 @@
+write a program that prints divisible-by-four numbers
+from 100 to 200
+
+- write a program that prints prime numbers 
+from 0 to 10000.
+
+
+
+

@@ -1,0 +1,20 @@
+<script>
+    // number of subject
+    const NUM = 3
+    let total = 0
+
+    // ask user for scores
+    for(let i = 1; i <= NUM; i++){
+        let score = Number(prompt(`Score${i}: `))
+
+        // add score to total
+        total = total + score
+    }
+
+    
+    let average = total / NUM
+
+    // show average
+    alert("Your average is " + average)
+
+</script>

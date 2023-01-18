@@ -1,0 +1,24 @@
+<script>
+    // number of subject
+    const NUM = 5
+    let scores = []
+
+    // ask user for scores
+    for(let i = 1; i <= NUM; i++){
+        let score = Number(prompt(`Score${i}: `))
+
+        // add score to array
+        scores.push(score)
+    }
+
+    // calculate total and average
+    let total = 0; 
+    for(score of scores){
+        total = total + score
+    }
+    let average = total / NUM
+
+    // show average
+    alert("Your average is " + average)
+
+</script>
