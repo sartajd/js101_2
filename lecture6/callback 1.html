@@ -1,0 +1,23 @@
+<!-- function is a first-class value -->
+<script>
+    function sumA(x, y, callback){
+        let total = x + y
+        callback(total)
+    }
+
+
+    function showTotal(total){
+        console.log(total)
+    }
+
+    function showTotal2(total){
+        console.log("total is " + total)
+    }
+
+    function showAverage(total){
+        console.log("Your average is " + total /2 )
+    }
+
+    sumA(100, 250, (total) => console.log("I owe u " + total))
+
+</script>

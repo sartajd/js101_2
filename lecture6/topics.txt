@@ -1,0 +1,65 @@
+swap variables
+temp
+destructuring
+
+Array
+can hold different types
+
+array methods
+	// properties
+	length
+
+	toString
+	join
+	push
+	pop
+	
+	shift/unshift // not recomended
+	delete fruits[0] // do not use it
+	contact
+
+	splice(index, 0)
+	slice(startIndex[, endIndex (not included]) returns a new array
+
+
+
+	sort() // default as string
+	Specifies a function that defines the sort order. 
+	If omitted, the array elements are converted to strings,
+	then sorted according to each character's Unicode code point value.
+
+	.sort((a,b) => b - a)
+
+
+
+String
+Escape Character
+long code lines
+	
+
+string properties
+	length
+string methods
+	substring(start, end)
+	trim
+	indexOf(key, startPosition)
+	lastIndexOf
+
+filter
+forEach
+callback
+interval
+setTimeout
+spread
+copy an array
+
+examples: 
+
+
+
+
+
+
+
+
+
