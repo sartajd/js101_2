@@ -1,0 +1,6 @@
+Task 1
+Write a function named ‘countBs’ that takes a string as it’s only argument and returns number of uppercase ‘B’ characters in that string. 
+
+Task 2
+Write a function called ‘countChar’ that behaves like ‘countBs’, except it takes two arguments: a string and a letter that is to be counted in the string. 
+Next, rewrite ‘countBs’ to make use of this new function 
