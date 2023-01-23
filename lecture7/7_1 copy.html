@@ -1,0 +1,21 @@
+<script>
+    
+    // copy by value: string, number, boolean
+    let x = 0
+    let y = x
+    x++;
+    console.log(y)
+
+    
+    // copy by reference: obj, array
+    const obj = {x: 0}
+
+    // copy an object by value
+    const obj2 = {...obj}
+    obj.x++;
+
+    console.log("obj2.x: " + obj2.x)
+
+
+
+</script>

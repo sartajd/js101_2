@@ -1,0 +1,19 @@
+<script src="./dictionary.js"></script>
+<script>
+
+    while(true){
+        // ask user for word
+        let word = prompt("Word: ")
+    
+        // search for word in dictionary
+        if(word in dictionary){
+            // if found, show the definition
+            console.log(dictionary[word])
+            alert(`${word}: ${dictionary[word]}`)
+        }else {
+            alert("Word not found")
+        }
+    }
+
+    // if not found, show "not found"
+</script>

@@ -1,0 +1,17 @@
+<script>
+    function createPerson(name){
+        const obj = {}
+        obj.name = name
+
+        obj.sayHi = function(){
+            alert("Hi, I'm " + this.name)
+        }
+
+        return obj
+    }
+
+    let person1 = createPerson("Ahmad")
+    person1.sayHi()
+    let person2 = createPerson("Ali")
+    let person3 = createPerson("Abdullah")
+</script>
