@@ -1,0 +1,35 @@
+<script>
+
+    class Person {
+        constructor(name){
+            this.name = name; 
+        }
+
+        sayHi(){
+            console.log("Hi, I'm " + this.name)
+        }
+    }
+
+    class Teacher extends Person {
+        constructor(name, course){
+            super(name)
+            this.course = course
+        }
+    }
+
+    class Student extends Person{
+        constructor(name, grade){
+            super(name);
+            this.grade = grade
+        }
+    }
+
+
+    const student1 = new Student("Ahmad", 5, 80)
+    const student2 = new Student("Ali",6)
+
+    // instance of Teacher class
+    const teacher1 = new Teacher("Abdullah", "HTML")
+
+
+</script>

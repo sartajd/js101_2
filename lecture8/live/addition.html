@@ -1,0 +1,31 @@
+<script>
+
+    function getNum(msg){
+        let num = Number(prompt(msg))
+        if(isNaN(num)){
+            throw new Error("Not a Number")
+        }
+        return num
+    }
+
+
+    
+
+
+    try {
+        let x = getNum("x: ")
+        let y = getNum("y: ")
+
+        alert("x + y = " + (x + y))
+    }
+    
+    catch (error){
+        alert("Invalid Input")
+    }
+    finally{
+        alert("you're welcome")
+    }
+
+
+
+</script>

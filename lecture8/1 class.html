@@ -1,0 +1,37 @@
+<script>
+    /*
+        OOP focuses on the objects that developers want to manipulate rather than the logic 
+        required to manipulate them.
+
+        This approach to programming is well-suited for programs that are large,
+        complex and actively updated or maintained.
+
+    */
+    class Person{
+        constructor(name){
+            this.name = name; 
+        }
+
+        sayHi(){
+            console.log("hi, I'm " + this.name)
+        }
+    }
+
+    class Student extends Person{
+        constructor(name, grade){
+            super(name);
+            this.grade = grade
+        }
+    }
+
+    class Teacher extends Person{
+        constructor(name, course){
+            super(name);
+            this.course = course
+        }
+    }
+
+    const ahmad = new Student("ahmad", 5)
+    ahmad.sayHi()
+
+</script>

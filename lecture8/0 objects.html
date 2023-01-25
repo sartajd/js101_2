@@ -1,0 +1,35 @@
+<script>
+    function Person(name) {
+        this.name = name; 
+    }
+
+    Person.prototype.sayHi = function(){
+        console.log("hi, I'm " + this.name)
+    }
+
+
+    function Student(name, grade){
+        this.name = name
+        this.grade = grade 
+    }
+
+    Student.prototype.sayHi = function(){
+        console.log("hi, I'm " + this.name)
+    }
+
+
+    function Teacher(name, course){
+        this.name = name; 
+        this.course = course; 
+    }
+
+    Teacher.prototype.sayHi = function() {
+        console.log("hi, I'm " + this.name)
+    }
+
+
+    const ahmad = new Student("ahmad", 5)
+    ahmad.sayHi()
+
+
+</script>
