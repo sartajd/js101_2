@@ -1,0 +1,3 @@
+try to add at least one of the following features: 
+1. each task have a button. when clicked on, the task is deleted
+2.  user can add a new task by pressing "Enter" key. 
