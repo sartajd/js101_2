@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>ToDo</title>
+
+        <script>
+
+            function addTask(){
+                // get value from input
+                let newTask = document.querySelector("input").value
+
+                // create <li> and add text to it
+                let li = document.createElement("li")
+                li.innerHTML = newTask
+
+                // add <li> to list
+                document.querySelector("ul").appendChild(li)
+
+                // clear the input
+                document.querySelector("input").value = ""
+            }
+
+            document.addEventListener("DOMContentLoaded", ()=>{
+                document.querySelector("button").onclick = addTask;
+            })
+        </script>
+    </head>
+    <body>
+        <h1>Tasks</h1>
+        <ul>
+        </ul>
+        <input placeholder="new task">
+        <button>Add</button>
+    </body>
+</html>

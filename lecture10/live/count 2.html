@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Count</title>
+        <script>
+            // DRY: Don't repeat yourself
+            let counter = 0;
+
+            function updateH1(){
+                document.querySelector("h1").innerHTML = counter;
+            }
+
+            function count(){
+                // increment counter
+                counter++;
+                // update the value of h1
+                updateH1()
+            }
+
+            function decrement(){
+                counter--;
+                updateH1()
+            }
+
+            function reset(){
+                counter = 0;
+                updateH1()
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector("#decrement").onclick = decrement;
+                document.querySelector("#increment").onclick = count;
+                document.querySelector("#reset").onclick = reset;
+            })
+        </script>
+    </head>
+
+    <body>
+        <h1>0</h1>
+        <button id="decrement">-</button>
+        <button id="increment">+</button>
+        <button id="reset">reset</button>
+
+    </body>
+</html>

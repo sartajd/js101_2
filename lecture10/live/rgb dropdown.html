@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>RGB</title>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector("#dropdown").onchange = function(event){
+                    document.querySelector("h1").style.color = event.target.value;
+                }
+            })
+
+        </script>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <select name="color" id="dropdown">
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+    </body>
+</html>
