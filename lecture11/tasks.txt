@@ -1,0 +1,4 @@
+1. create a stopwatch with the following specifications: 
+ - one h1 for displaying number of seconds
+ - one button for starting/pausing stopwatch
+ - one button for reseting stopwatch

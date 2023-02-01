@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Count</title>
+    </head>
+
+    <body>
+        <h1>0</h1>
+        <button>+</button>
+
+        <script>
+            // get saved value
+            let counter = Number(localStorage.getItem("counter")) || 0;
+
+            const h1 = document.querySelector("h1")
+            const button = document.querySelector("button")
+
+            button.onclick = () => {
+                counter++; 
+                // save counter to localstorage
+                localStorage.setItem("counter", counter);
+
+                h1.innerHTML = counter;
+            }
+
+            // LocalStorage
+            // localstorage.setItem("key", "value")
+        </script>
+    </body>
+</html>

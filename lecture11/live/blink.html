@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Blink</title>
+    </head>
+    <body>
+        <h1 style="color: red; visibility: visible; ">Warning</h1>
+        <button>stop</button>
+
+        <script>
+            function blink(){
+                const heading = document.querySelector("h1")
+                if(heading.style.visibility === "visible"){
+                    heading.style.visibility = "hidden"
+                }else {
+                    heading.style.visibility = "visible"
+                }
+            }
+
+            // 
+            const interID = setInterval(blink, 100)
+            document.querySelector("button").onclick = () => clearInterval(interID)
+        </script>
+    </body>
+</html>

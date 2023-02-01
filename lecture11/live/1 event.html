@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Event</title>
+    </head>
+    <body>
+        <button>click me</button>
+
+        <script>
+
+            function sayHi(){
+                alert("hi")
+            }
+
+            function greeting(){
+                alert("how are you?")
+            }
+
+
+            const button = document.querySelector("button")
+            
+            button.addEventListener("click", sayHi)
+            button.addEventListener("click", greeting)
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>ToDo</title>
+    </head>
+    <body>
+        <h1>Tasks</h1>
+        <ul>
+        </ul>
+
+        <form>
+            <input placeholder="new task">
+            <button>Add</button>
+
+            <script>
+                const button = document.querySelector("button")
+                const form = document.querySelector("form")
+                const input = document.querySelector("input")
+                const ul = document.querySelector("ul")
+
+
+                form.onsubmit = function(){
+                    // get value from input
+                    const value = input.value; 
+
+                    // exit the function
+                    if(value === ""){
+                        return false; 
+                    }
+
+                    // create an <li/> element and add new task to it
+                    const li = document.createElement("li")
+                    li.innerHTML = value
+
+                    // add button to li
+                    const bt = document.createElement("button")
+                    bt.innerHTML = "delete"
+                    li.appendChild(bt)
+                    bt.onclick = deleteTask;
+
+                    // appendd <li> to ul
+                    ul.appendChild(li)
+
+                    // clear input
+                    input.value = ""
+
+                    // prevent page from reloading
+                    return false
+                }
+
+                function deleteTask(event){
+                    event.target.parentNode.remove()
+                }
+
+
+            </script>
+        </form>
+    </body>
+</html>

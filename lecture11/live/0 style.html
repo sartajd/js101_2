@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Style</title>
+    </head>
+    <body>
+        <h1>Hello world</h1>
+        <h1>JavaScript</h1>
+        <button>Red</button>
+
+        <script>
+            function turnRed(){
+                // turn red colors of all h1
+                const headings = document.querySelectorAll("h1")
+                
+                // iterate over array
+                for(node of headings){
+                    node.style.color = "red"
+                }
+
+            }
+
+            document.querySelector("button").onclick = turnRed;
+        </script>
+    </body>
+</html>
