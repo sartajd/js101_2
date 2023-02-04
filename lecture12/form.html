@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Register</title>
+
+        <style>
+            table, tr, td {
+                border: 1px solid grey;
+                border-collapse: collapse;
+            }
+
+            td, th {
+                padding: 5px;
+            }
+
+            input:invalid, select:invalid {
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <table>
+            <thead>
+                <th>Username</th>
+                <th>password</th>
+                <th>Gender</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ahmad</td>
+                    <td>door123</td>
+                    <td>male</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr/>
+        <form>
+            <div>
+                <label for="username">Username</label>
+                <input id="username" name="username" required pattern="[A-Za-z\d_]*">
+                <span id="username_error"></span>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" required maxlength="20" minlength="8">
+            </div>
+            <div>
+                <label for="gender">Gender</label>
+                <select name="gender" id="gender" required>
+                    <option value="" >gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">female</option>
+                </select>
+            </div>
+            <button >Add</button>
+        </form>
+
+        <script>
+
+            // document.querySelector("#username").onkeyup = event => {
+            //     console.log(event.target.value)
+            //     event.target.value = event.target.value.trim()
+            // }
+            const form = document.querySelector("form")
+            form.onsubmit = () => {
+                
+                // select tbody
+                const tbody = document.querySelector("tbody")
+                // create <tr>
+                const tr = document.createElement("tr")
+                
+                // create td for username, password and gender
+                const formData = new FormData(form)
+                for(const [key, value] of formData){
+                    // create td
+                    const td = document.createElement("td")
+                    // insert value
+                    td.innerHTML = value 
+                    // append tds to tr
+                    tr.appendChild(td)
+                }
+
+                // append tr to tbody
+                tbody.appendChild(tr)
+
+                // prevent reload
+                return false
+            }
+        </script>
+    </body>
+</html>

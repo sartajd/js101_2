@@ -1,0 +1,26 @@
+<script>
+    function Person(name, surname, score){
+        this.name = name; 
+        this.surname = surname; 
+        this.score = score
+    }
+
+    const persons = []
+
+    for(let i = 0; i < 3; i++){
+        const person = new Person()
+        // create a new Person instance
+        for(const key of Object.keys(person))
+        {
+            // prompt the user
+            const value = prompt(key + ":")
+            person[key] = value
+        }
+    
+        // append it to array
+        persons.push(person)
+    }
+
+    // print array
+    console.log(persons)
+</script>
