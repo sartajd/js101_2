@@ -1,0 +1,39 @@
+<html>
+
+    <head>
+        <title>Genderize</title>
+    </head>
+
+    <body>
+        <form >
+            Name: <input type="text" id="name" name="name" placeholder="Enter your name here"><br>
+            <button>check</button> <br>
+            <input type="text" name="gender" id="gender" disabled><br>
+        </form>
+        <script>
+            const form = document.querySelector("form")
+            form.addEventListener("submit", e => {
+                const name = document.querySelector("#name").value
+
+                // get data from server
+                fetch("https://api.genderize.io?name=" + name)
+                // chagne it to json object
+                .then(function(response){
+                    return response.json()
+                })
+                // present it
+                .then(function(data){
+                    console.log(data)
+                    if(data.gender === null){
+                        document.querySelector("#gender").value = "unknown name";
+                    }else {
+                        document.querySelector("#gender").value = data.gender;
+                    }
+                })
+
+                // prevent page from reloading
+                e.preventDefault()
+            })
+        </script>
+    </body>
+</html>

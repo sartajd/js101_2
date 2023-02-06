@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+
+    <body>
+        <form >
+            Username: <input name="username" id="username" pattern="^[A-Za-z0-9_]+$"required> <br>
+            Password: <input type="text" id="password" required> <br>
+            Confirm: <input type="text" id="password2" required><br>
+
+            <button>Create Account</button>
+        </form>
+
+        <script>
+
+            validateUsername()
+            const username = document.querySelector("#username")
+            username.addEventListener("input", validateUsername) 
+
+            
+            
+            function validateUsername(){
+                const username = document.querySelector("#username")
+                // if empty, لطفا نام تان بنوسید
+                if(username.validity["valueMissing"]){
+                    username.setCustomValidity("لطفا نام تانرا بنوسید")
+                }
+                else if(username.validity["patternMismatch"]) {
+                    username.setCustomValidity("در اسم تان فقط حروف انګلیسی و ـ اجازت است")
+                }
+
+                // if mismatch, د نام تان فقط حروف A-z, و _ اجازت است
+            }
+
+
+
+
+
+
+            const password = document.querySelector("#password")
+            const password2 = document.querySelector("#password2")
+
+            password2.addEventListener("input", () => {
+                // if password and password2 not equal, invalid
+                // custom validation
+                if(password.value !== password2.value){
+                    password2.setCustomValidity("Please enter the same password")
+                }
+                else {
+                    // clean the message
+                    password2.setCustomValidity("")
+                }
+
+            })
+        </script>
+    </body>
+</html>
