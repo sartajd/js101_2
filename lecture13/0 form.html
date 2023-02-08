@@ -28,6 +28,8 @@
                 }
                 else if(username.validity["patternMismatch"]) {
                     username.setCustomValidity("در اسم تان فقط حروف انګلیسی و ـ اجازت است")
+                }else {
+                    username.setCustomValidity("")
                 }
 
                 // if mismatch, د نام تان فقط حروف A-z, و _ اجازت است

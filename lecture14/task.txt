@@ -1,0 +1,11 @@
+url: https://jsonplaceholder.typicode.com/guide/
+post url: https://jsonplaceholder.typicode.com/posts/1'
+
+
+getPost(id) // fetch the post url, and return json data of the post
+createPost() // create a div, h1, p; and inside it, insert post data
+
+
+
+
+
