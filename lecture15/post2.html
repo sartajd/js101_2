@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Post</title>
+    </head>
+
+    <body>
+        <h1>loading ...</h1>
+        <p>loading...</p>
+
+        <script>
+
+            function loadPost(){
+                getPost(1)
+                .then(function(p){
+                    document.querySelector("h1").innerHTML = p.title
+                    document.querySelector("p").innerHTML = p.body
+                })
+                .catch(function(){
+                    alert("could not load post from server")
+                })
+            }
+
+            // load post for first time
+            loadPost()
+
+
+            function getPost(id){
+                return new Promise(function(resolve, reject){
+                    fetch("https://jsonplaceholder.typicode.com/posts/1")
+                    .then(function(response){
+                        if(!response.ok){
+                            console.log(404)
+                        }
+                        return response.json()
+                    })
+                    .then(function(post){
+                        //return post
+                        resolve(post)
+                    })
+                    .catch(function(error){
+                        reject(error)
+                    })
+                })
+            }
+        </script>
+    </body>
+</html>

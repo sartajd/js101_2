@@ -23,7 +23,6 @@
                 })
                 .then(function(json){
                     // SHow the info
-                    console.log(json)
                     if(json.message === "Not Found"){
                         document.querySelector("#name").innerHTML = json.message
                     }else {

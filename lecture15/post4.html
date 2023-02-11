@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Post</title>
+
+        <style>
+            .post {
+                margin: 0 auto;
+                padding: 10px;
+                border: 1px solid grey;
+                border-radius: 15px;
+                max-width: 700px;
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+
+        <div id="container">
+            
+        </div>
+
+        <script>
+            const promises = []
+
+            // load 10 posts
+            for(let i = 1; i < 10; i++){
+                promises.push(getPost(i))
+            }
+            const posts = Promise.all(promises)
+            posts.then(p => {
+                for(post of p){
+                    appendPost(post)
+                }
+            })
+        
+            function appendPost(post){
+
+                try {
+                    // create a div with class post
+                    const div = document.createElement("div")
+                    div.classList.add("post")
+                    // crate h1
+                    const h1 = document.createElement("h1")
+                    // create p 
+                    const p = document.createElement("p")
+
+                    // insert data
+                    h1.innerHTML = post.title
+                    p.innerHTML = post.body
+                    div.appendChild(h1)
+                    div.appendChild(p)
+
+                    // append it to container
+                    document.querySelector("#container").appendChild(div)
+                }
+                catch(error){
+                    alert("could not load post from server")
+                }   
+            }
+
+            function getPost(id){
+                return new Promise(function(resolve, reject){
+                    fetch("https://jsonplaceholder.typicode.com/posts/" + id)
+                    .then(function(response){
+                        return response.json()
+                    })
+                    .then(function(post){
+                        //return post
+                        resolve(post)
+                    })
+                    .catch(function(error){
+                        reject(error)
+                    })
+                })
+            }
+        </script>
+    </body>
+</html>

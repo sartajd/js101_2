@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Post</title>
+    </head>
+
+    <body>
+        <h1>loading ...</h1>
+        <p>loading...</p>
+
+        <script>
+            fetch("https://jsonplaceholder.typicode.com/posts/1")
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(post){
+                // set h1
+                document.querySelector("h1").innerHTML = post.title
+                // set p
+                document.querySelector("p").innerHTML = post.body
+            })
+
+
+            function getPost(id){
+                
+            }
+        </script>
+    </body>
+</html>
