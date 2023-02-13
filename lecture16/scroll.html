@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Scroll</title>
+    </head>
+
+    <body>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+        <h1>Post title</h1>
+
+        <script>
+            window.onscroll = function(){
+                // console.log("window.scrollY: ", window.scrollY)
+                // console.log("window.innerheight: ", window.innerHeight)
+                // console.log("document.body.offsetheight: ", document.body.offsetHeight)
+
+
+                // if at bottom of page, turn bg green
+                if(window.scrollY + window.innerHeight >= document.body.offsetHeight){
+                    document.body.style.backgroundColor = "green"
+                }
+                else {
+                    // else turn bg white
+                    document.body.style.backgroundColor = "white"
+                }
+            }
+
+        </script>
+    </body>
+</html>
