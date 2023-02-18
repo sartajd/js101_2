@@ -1,0 +1,2 @@
+create a back to top button, which is only visible when use scroll to bottom of page. 
+when you click the bottom, it should scroll user back to top

@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>Infinite</title>
+
+        <script src="./api.js"></script>
+        <script src="./myLibrary.js"></script>
+
+        <style>
+            .post {
+                border: 1px solid grey;
+                border-radius: 10px;
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+                max-width: 650px;
+                margin: 10px auto;
+                background-color: white;
+            }
+
+            body {
+                background-color: rgb(225, 225, 225);
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="posts">
+
+        </div>
+        
+        <script>
+            const COUNT = 10
+            let start = 1;
+
+            loadPosts(start)
+            start = start + COUNT
+
+            // if at bottom, load then more posts
+            window.onscroll = function(){
+                if(isAtBottom()){
+                    loadPosts(start)
+                    start = start + COUNT
+                }
+            }
+
+            
+            function loadPosts(start){      
+                console.log("loadPosts") 
+                // load ten posts
+                for(let i = start; i < start + COUNT; i++){
+                    loadPost(i)
+                }
+            }
+
+            function loadPost(id){
+                console.log("loadpost")
+                // get post from server, add it to DOM
+                getPost(id)
+                .then(post => {
+                    // create div and add h1 
+                    const div = document.createElement("div")
+                    div.classList.add("post")
+                    const h1 = document.createElement("h1")
+                    h1.innerHTML = post
+                    const button = document.createElement("button")
+                    button.innerHTML = "hide"
+
+                    // add h1 and button to div
+                    div.appendChild(h1) 
+                    div.appendChild(button)
+                    document.querySelector("#posts").appendChild(div)
+                })
+            }
+        </script>
+    </body>
+</html>

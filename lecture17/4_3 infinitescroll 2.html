@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>Infinite</title>
+
+        <script src="./api.js"></script>
+        <script src="./myLibrary.js"></script>
+
+        <style>
+
+            #posts {
+                max-width: 700px;
+                margin: 0 auto;
+            }
+            @keyframes hide {
+                0% {
+                    opacity: 1;
+                    height: 100%;
+                    line-height: 100%;
+                    padding: 20px;
+                    margin-bottom: 10px;
+                }
+                75% {
+                    opacity: 0;
+                    height: 100%;
+                    line-height: 100%;
+                    padding: 20px;
+                    margin-bottom: 10px;
+                }
+                100% {
+                    opacity: 0;
+                    height: 0px;
+                    line-height: 0px;
+                    padding: 0px;
+                    margin-bottom: 0px;
+                }
+            }
+
+            .post {
+                background-color: #77dd11;
+                padding: 20px;
+                margin-bottom: 10px;
+                max-height: 70px;                
+                display: flex;
+                justify-content: space-between;
+
+
+                animation-name: hide;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+                animation-play-state: paused;
+
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="posts"></div>
+        
+        <script>
+            const COUNT = 10;
+            let start = 1;
+
+            loadPosts(start)
+            start = start + COUNT
+
+            // if at bottom, load then more posts
+            window.onscroll = function(){
+                if(isAtBottom()){
+                    loadPosts(start)
+                    start = start + COUNT
+                }
+            }
+
+            
+            function loadPosts(start){      
+                console.log("loadPosts") 
+                // load ten posts
+                for(let i = start; i < start + COUNT; i++){
+                    loadPost(i)
+                }
+            }
+
+            function loadPost(id){
+                console.log("loadpost")
+                // get post from server, add it to DOM
+                getPost(id)
+                .then(post => {
+                    // create div and add h1 
+                    const div = document.createElement("div")
+                    div.classList.add("post")
+                    const h1 = document.createElement("h1")
+                    h1.innerHTML = post
+                    const button = document.createElement("button")
+                    button.className = "hide"
+                    button.innerHTML = "hide"
+
+                    // add h1 and button to div
+                    div.appendChild(h1) 
+                    div.appendChild(button)
+                    document.querySelector("#posts").appendChild(div)
+                })
+            }
+            
+            // If hide button is clicked, delete the post.
+            document.addEventListener('click', event => {
+
+                // 
+                console.log("event captured")
+                // get the button
+                const element = event.target;
+                console.log(event.target)
+                // if it's hide button
+                if (element.className === 'hide') {
+                    // start animation
+                    element.parentNode.style.animationPlayState = 'running';
+                    // when animation ends
+                    console.log(element.parentElement)
+
+                    // console.log(element.parentNode)
+                    element.parentNode.addEventListener('animationend', () =>  {
+                        // remove the post
+                        element.parentNode.remove();
+                    });
+                }
+            });
+        
+        </script>
+    </body>
+</html>
