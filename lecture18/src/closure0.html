@@ -1,0 +1,13 @@
+<script>
+    {
+        // when a function access a varialbe in the outer scope, js creates a closure
+        let x = 1
+        
+        function printNumber(){
+            console.log(x)
+        }
+    }
+    
+    printNumber()
+    console.log(x)
+</script>

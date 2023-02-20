@@ -1,0 +1,22 @@
+<script>
+    function square(x){
+        x = Number(x)
+        if(isNaN(x)){
+            throw new Error("x is not a number")
+        }
+        else {
+            return x ** 2
+        }
+    }
+
+
+    let num  = prompt("x: ")
+    try {
+        console.log(square(num))
+    }
+    catch(error){
+        console.log(error)
+    }
+
+    console.log("hi")
+</script>
