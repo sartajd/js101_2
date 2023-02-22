@@ -1,0 +1,2 @@
+show number of tasks in h1
+add a button to delete a task

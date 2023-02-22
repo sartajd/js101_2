@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Counter</title>
+
+        <script  src="./react.min.js"></script>
+        <script  src="./react-dom.min.js"></script>
+        <script src="./babel.min.js"></script>
+
+    </head>
+    <body>
+
+        <div id="root"></div>
+        
+
+        <script type="text/babel">
+
+            // component
+            function Counter(){
+                const [count, setCount] = React.useState(0)
+                
+                function increment(){
+                    setCount(count + 1)
+                }
+
+                return (
+                    <div>
+                        <h1>{count}</h1>
+                        <button onClick={increment}>+</button>
+                    </div>
+                )
+            }
+
+            function App(){
+                return (
+                    <>
+                        <Counter />
+                        <Counter />
+                        <Counter />
+                        <Counter />
+                    </>
+                )
+            }
+
+         
+            const root = ReactDOM.createRoot(document.querySelector("#root"))
+            root.render(<App />)
+            
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <body>
+        
+        <input name="firstName" placeholder="first name">
+        <input name="lastName" placeholder="last name">
+
+
+        <script>
+            document.querySelectorAll("input").forEach( element  => {
+                element.addEventListener("input", event => {
+                    console.log(event)
+                    console.log(event.target.value)
+                })
+            })
+        </script>
+    </body>
+</html>
