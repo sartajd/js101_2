@@ -1,5 +1,5 @@
 <script>
-    // higher order function is a function that accepts a function as argumetn
+    // higher order function is a function that accepts a function as argument
     // or return a function
     function Add(num){
         return function(x){
@@ -8,6 +8,8 @@
     }
 
     const add20 = Add(20)
+
+    add20(10) // 30
 
 
 

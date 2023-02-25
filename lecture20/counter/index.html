@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Counter</title>
+
+        <script  src="./react.min.js"></script>
+        <script  src="./react-dom.min.js"></script>
+        <script src="./babel.min.js"></script>
+
+    </head>
+    <body>
+
+        <div id="root"></div>
+        
+
+        <script type="text/babel">
+
+            // component
+            function Hello(props){
+                return <h1>Hello {props.name || "World"}</h1>
+            }
+
+            function App(){
+                return (
+                    <div>
+                        <Hello name="Ahmad" />
+                        <Hello name="Ali" />
+                        <Hello />
+                    </div>
+                )
+            }
+
+         
+            const root = ReactDOM.createRoot(document.querySelector("#root"))
+            root.render(<App />)
+            
+
+        </script>
+    </body>
+</html>
