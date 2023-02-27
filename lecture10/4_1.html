@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>RGB</title>
+
+        <script>
+
+            // change  background color to red
+            function toRed(){
+                document.querySelector("h1").style.color = "red";
+            }
+
+            function toGreen(){
+                document.querySelector("h1").style.color = "green"
+            }
+
+            function toBlue(){
+                document.querySelector("h1").style.color = "blue"
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector("#red").onclick = toRed;
+                document.querySelector("#green").onclick = toGreen;
+                document.querySelector("#blue").onclick = toBlue;
+            })
+
+        </script>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <button id="red" >Red</button>
+        <button id="green" >Green</button>
+        <button id="blue" >Blue</button>
+    </body>
+</html>

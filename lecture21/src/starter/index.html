@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <!-- ReactJS: A JavaScript Declarative UI Library -->
+    <script src="./react.min.js"></script>
+    <!-- React DOM: to intelligently update DOM -->
+    <script src="./react-dom.min.js"></script>
+
+    <!-- to convert JSX to regular JavaScript -->
+    <script src="./babel.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function WinScreen(props){
+
+            const handleClick = () => {
+                // score = 0, setScore(0)
+                props.setScore(0)
+                // won = false setWon(false)
+                props.setWon(false)
+            }
+
+            return (
+                <>
+                    <h1>You Won!</h1>
+                    <button onClick={handleClick}>Try Again</button>
+                </>
+            )
+        }
+
+        function Addition(){
+            const [num1, setNum1] = React.useState(1)
+            const [num2, setNum2] = React.useState(1)
+            const [response, setResponse] = React.useState("")
+            const [score, setScore] = React.useState(0)
+            const [isWrong, setIsWrong] = React.useState(false)
+            const [won, setWon] = React.useState(false)
+
+            const handleChange = event => {
+                setResponse(event.target.value)
+            }
+
+            const handleSubmit = event => {
+                if(event.key === "Enter"){
+                    // calculate num1 + num2
+                    // if answer is correct, increase score, clear response
+                    if(Number(response) === num1 + num2){
+                        setIsWrong(false)
+                        const newScore = score + 1
+                        if(newScore > 3){
+                            setWon(true)
+                        }
+                        setScore(newScore)
+                        // change numbers
+                        setNum1(Math.ceil(Math.random() * 10))
+                        setNum2(Math.ceil(Math.random() * 10))
+
+                        setResponse("")
+                    }else {
+                        setIsWrong(true)
+                        setResponse("")
+                    }
+                }
+            }
+
+            if(won){
+                return <WinScreen setScore={setScore} setWon={setWon}/>
+            }
+
+            return (
+                <div>
+                    <h1 className={isWrong ? "red": null}>{num1} + {num2}</h1>
+                    <input type="text" value={response} onChange={handleChange} onKeyPress={handleSubmit}/>
+                    <p>score is {score}</p>
+                    {
+                        // conditional rendering
+                        isWrong ? <p>Your answer is wrong</p> : null
+                    }
+                    
+                </div>
+            )
+        }
+
+        function App(){
+            return (
+                <div>
+                    <Addition />
+                </div>
+            )
+        }
+
+
+        // specify where you want to render your react app
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        // render a component
+        root.render(<App />);
+
+    </script>
+</body>
+</html>
