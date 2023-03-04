@@ -1,0 +1,15 @@
+{
+  "name": "milestone_dd",
+  "version": "1.0.0",
+  "description": "a useless module to explain how to create and publish a module to npm ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo",
+    "useless"
+  ],
+  "author": "milestone",
+  "license": "ISC"
+}

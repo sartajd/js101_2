@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <!-- ReactJS: A JavaScript Declarative UI Library -->
+    <script src="./react.min.js"></script>
+    <!-- React DOM: to intelligently update DOM -->
+    <script src="./react-dom.min.js"></script>
+
+    <!-- to convert JSX to regular JavaScript -->
+    <script src="./babel.min.js"></script>
+
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+        header, main {
+            padding: 10px;
+            margin: 0;
+        }
+        header.light{
+            color: black;
+            background-color: bisque;
+        }
+
+        header.dark {
+            color: rgb(231, 231, 231);
+            background-color: rgb(28, 28, 31);
+        }
+
+        main.light {
+            color: rgb(24, 24, 24);
+            background-color: rgb(243, 243, 243);
+        }
+
+        main.dark {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        // 1. create a context
+        const Context = React.createContext()
+
+        function Header(){
+            // 3. get context value
+            const theme = React.useContext(Context)
+            return (
+                <header className={theme}>
+                    <span>Logo</span>
+                </header>
+            )
+        }
+
+        function Main(){
+            const theme = React.useContext(Context)
+
+            return (
+                <main className={theme}>
+                    <h1>Main Content</h1>
+                </main>
+            )
+        }
+
+        function App(){
+            const [theme, setTheme] = React.useState("light") 
+            return (
+                // 2. set value of context
+                <Context.Provider value={theme}> 
+                <div>
+                    <button onClick={() => setTheme(theme === "light"? "dark": "light")}>ToggleTheme</button>
+                    <Header />
+                    <Main />
+                </div>
+                </Context.Provider> 
+            )
+        }
+
+        
+
+        // specify where you want to render your react app
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        // render a component
+        root.render(<App />);
+
+    </script>
+</body>
+</html>
