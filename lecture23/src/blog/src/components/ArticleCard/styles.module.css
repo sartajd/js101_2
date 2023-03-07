@@ -1,0 +1,23 @@
+.card {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 20px;
+
+}
+/* .card > * {
+    border: 1px solid yellow;
+} */
+
+.author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+

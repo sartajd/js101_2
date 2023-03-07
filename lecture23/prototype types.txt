@@ -1,0 +1,15 @@
+Lo-fi and hi-fi prototypes are design models used in the early stages of product development, and can be explained as follows:
+
+Lo-fi prototype:
+
+    Refers to a rough, low-fidelity model of a product or feature, often created with simple materials like paper, cardboard, or sticky notes.
+    Used to quickly and cheaply test out design ideas and gather feedback.
+    Can be used to identify usability issues and design flaws before investing more time and resources in creating a higher fidelity prototype.
+    Typically used in the early stages of product development.
+
+Hi-fi prototype:
+
+    Refers to a more polished, high-fidelity model of a product or feature, often created using digital tools or more advanced materials.
+    Used to test out more refined design ideas and gather feedback.
+    Can be used to test out specific interactions or features in greater detail.
+    Typically used in later stages of product development, after lo-fi prototypes have been tested and refined.

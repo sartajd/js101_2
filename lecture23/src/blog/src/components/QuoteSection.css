@@ -1,0 +1,15 @@
+.quote-section {
+    margin: 0;
+    padding: 50px;
+    text-align: center;
+    background-color: white;
+}
+
+.quote-section > h1 {
+    font-size: 45px;
+}
+
+.quote-section > p {
+    color: grey;
+    font-size: larger;
+}

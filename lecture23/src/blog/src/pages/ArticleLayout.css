@@ -1,0 +1,23 @@
+.nav-buttons > a {
+    margin-left: 20px;
+    padding: 5px;
+    background-color: rgb(220, 214, 214);
+    border-radius: 5px;
+}
+
+.nav-buttons > .active {
+    color: grey;
+    border: none;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+}
+
+.article-page {
+    max-width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+}
