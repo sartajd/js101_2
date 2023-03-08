@@ -1,0 +1,18 @@
+<script>
+    function sayHi(){
+        console.log("hi, I'm " + this.name)
+    }
+
+    const obj = {
+        name: "Abdullah"
+    }
+
+    // 
+    sayHi.call(obj)
+
+    // bind
+    const sayHiAbdullah =  sayHi.bind(obj)
+
+    sayHiAbdullah()
+    
+</script>

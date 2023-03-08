@@ -1,0 +1,18 @@
+<script>
+    const mySymbol = Symbol()
+
+    const obj = {
+        name: 'Ahmad', 
+        age: 20,
+        [mySymbol]: "very secret",
+    }
+
+    obj[mySymbol] = "very secret"
+
+
+
+    for(const key in obj){
+        console.log(key + " " + obj[key])
+    }
+
+</script>

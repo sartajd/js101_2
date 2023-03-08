@@ -1,0 +1,6 @@
+write ten methods of Array
+write ten methods of strings
+write 5 methods of objects
+write 10 properties of DOM
+write 10 methods of DOM
+write 10 methods/properties of window

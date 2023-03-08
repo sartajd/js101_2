@@ -1,0 +1,24 @@
+<script>
+    function sayHi(message){
+        console.log("hi, I'm " + this.name)
+        console.log(message)
+    }
+
+    const obj = {
+        name: "Abdullah"
+    }
+
+    // 
+    sayHi.call(obj, "How are you?")
+
+    // apply
+    sayHi.apply(obj, ["how are you? apply"])
+
+    // bind
+    const sayHiAbdullah =  sayHi.bind(obj, "What's up?")
+    sayHiAbdullah()
+
+
+
+    
+</script>
